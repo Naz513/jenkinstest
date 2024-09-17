@@ -14,5 +14,5 @@ pipeline {
                 sh 'aws --version'
             }
         }
-        }
     }
+}
