@@ -16,7 +16,7 @@ spec:
     - cat
     tty: true
   - name: jnlp
-    image: jenkins/inbound-agent:4.10-3
+    image: jenkins/inbound-agent:latest
 '''
         }
     }
