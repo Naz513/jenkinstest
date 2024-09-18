@@ -6,6 +6,9 @@ pipeline {
             yaml """
 apiVersion: v1
 kind: Pod
+metadata:
+  labels:
+    test: yes
 spec:
   containers:
   - name: node
@@ -13,6 +16,9 @@ spec:
     command:
     - cat
     tty: true
+  - name: jnlp
+    image: jenkins/inbound-agent:4.10-3
+    args: ['$(JENKINS_SECRET)', '$(JENKINS_NAME)']
 """
         }
     }
