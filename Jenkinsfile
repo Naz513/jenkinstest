@@ -3,7 +3,7 @@ pipeline {
         kubernetes {
             label 'jenkins-agent'
             defaultContainer 'node'
-            yaml """
+            yaml '''
 apiVersion: v1
 kind: Pod
 metadata:
@@ -18,8 +18,7 @@ spec:
     tty: true
   - name: jnlp
     image: jenkins/inbound-agent:4.10-3
-    args: ['$(JENKINS_SECRET)', '$(JENKINS_NAME)']
-"""
+'''
         }
     }
     environment {
